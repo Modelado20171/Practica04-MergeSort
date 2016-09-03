@@ -1,8 +1,11 @@
 # Aquí es donde debe de ir su implementación del merge sort
 
 # Esta función recibe una lista y regresa una copia ordenada
-def merge_sort(lista):
-  pass
+def merge_sort(l):
+  if len(l) < 2:
+    return l
+  half = len(l) // 2
+  return merge(merge_sort(l[:half]), merge_sort(l[half:]))
 
 def merge(l1, l2):
     l = []
