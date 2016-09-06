@@ -1,3 +1,8 @@
+def add_missing(merged_list, missed_list, i) :
+	for j in range(i, len(missed_list)) :
+		merged_list.append(missed_list[j])
+	return merged_list
+
 def merge(lista1, lista2) :
 	merged_list = []
 	i, j = 0, 0
