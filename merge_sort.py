@@ -1,5 +1,22 @@
 # Aquí es donde debe de ir su implementación del merge sort
+def mezcla(lista1, lista2):
+	aux = []
+	indice1 = 0
+	indice2 = 0
+	while(indice1 < len(lista1) and indice2 < len(lista2)):
+		if(lista1[indice1] < lista2[indice2]):
+			aux.append(lista1[indice1])
+			indice1 += 1
+		else: 
+			aux.append(lista2[indice2])
+			indice2 += 1
 
+		if indice1 == len(l1):
+			aux.extend(lista2[indice2:])
+    	elif indice2 == len(lista2):
+    		aux.extend(l1[indice1:])
+        return l
+        
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista)
   pass
