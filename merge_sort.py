@@ -1,8 +1,17 @@
 # Aquí es donde debe de ir su implementación del merge sort
 
 # Esta función recibe una lista y regresa una copia ordenada
-def merge_sort(lista)
-  pass
+def merge_sort(lista):
+    if(len(lista) == 1):
+        return lista.copy()
+    l1, l2, counter= list(), list(), 0
+    while counter < len(lista):
+        if counter % 2 == 0:
+            l1.append(lista[counter])
+        else:
+            l2.append(lista[counter])
+        counter+= 1
+    return merge(merge_sort(l1), merge_sort(l2))
 
 def merge(lista1, lista2):
     lista= list()
