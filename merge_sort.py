@@ -19,7 +19,10 @@ def mezcla(lista1, lista2):
         
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista)
-  pass
+  if len(lista) < 2:
+    return lista
+  half = len(lista) // 2
+  return merge(merge_sort(lista[:half]), merge_sort(lista[half:]))
 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
