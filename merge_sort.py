@@ -1,3 +1,18 @@
+def merge(lista1, lista2) :
+	merged_list = []
+	i, j = 0, 0
+	while i < len(lista1) and j < len(lista2) :
+		if lista1[i] < lista2[j] :
+			merged_list.append(lista1[i])
+			i += 1
+		else :
+			merged_list.append(lista2[j])
+			j += 1
+	if i == len(lista1) :
+		return add_missing(merged_list, lista2, j)
+	else :
+		return add_missing(merged_list, lista1, i)
+
 def merge_sort(lista) :
 	if len(lista) == 1 :
 		return lista[:]
