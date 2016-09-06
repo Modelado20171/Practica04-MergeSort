@@ -4,6 +4,23 @@
 def merge_sort(lista)
   pass
 
+def merge(lista1, lista2):
+    lista= list()
+    counter1, counter2= 0, 0
+    while counter1 < len(lista1) and counter2 < len(lista2):
+        if lista1[counter1] < lista2[counter2]:
+            lista.append(lista1[counter1])
+            counter1+= 1
+        else:
+            lista.append(lista2[counter2])
+            counter2+= 1
+    while counter2 < len(lista2):
+        lista.append(lista2[counter2])
+        counter2+= 1
+    while counter1 < len(lista1):
+        lista.append(lista1[counter1])
+        counter1+= 1
+    return lista
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
