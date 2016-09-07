@@ -2,7 +2,7 @@
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista)
-  pass
+  pa
 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
