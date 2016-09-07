@@ -1,9 +1,19 @@
-# Aquí es donde debe de ir su implementación del merge sort
-
 # Esta función recibe una lista y regresa una copia ordenada
-def merge_sort(lista)
-  pass
-
+def merge_sort(lista):
+	n = len(lista)
+	listaOrd = list(lista)
+	i = 1
+	while i < n:	#separamos la lista en sublistas
+		j = 0
+		while j < n:	#las unimos
+			merge(listaOrd, j, min(j+i,n), min(j+i*2,n))
+			j += 2*i
+		i *= 2
+	return listaOrd
+	
+# funcion merge que combina dos de los sub 'arreglos'
+def merge(listaO, beg, mid, end):
+	pass
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
