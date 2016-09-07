@@ -13,7 +13,22 @@ def merge_sort(lista):
 	
 # funcion merge que combina dos de los sub 'arreglos'
 def merge(listaO, beg, mid, end):
-	pass
+	a = beg
+	b = mid
+	listaTmp = listaO[:]	#hacemos una lista temporal para hacerlo mas facil
+	for c in range(beg, end):
+		if a >= mid:	
+			listaO[c] = listaTmp[b]
+			b += 1;
+		elif b >= end:
+			listaO[c] = listaTmp[a]
+			a += 1;
+		elif listaTmp[b] < listaTmp[a]:
+			listaO[c] = listaTmp[b]
+			b += 1;
+		else:
+			listaO[c] = listaTmp[a]
+			a += 1;
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
