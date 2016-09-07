@@ -2,7 +2,17 @@
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
-	pass
+	if(len(lista) <= 1):
+		return lista
+	else:
+		media = len(lista) // 2
+		ListIzq = lista[:media]
+		ListDer = lista[media:]
+
+		Izq = merge_sort(ListIzq)
+		Der = merge_sort(ListDer)
+
+		return list(merge(Izq,Der))
 
 # Definimos la funcion para concatenar las listas ya ordenadas.
 def merge(ListIzq, ListDer):
