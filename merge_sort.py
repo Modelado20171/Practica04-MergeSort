@@ -1,9 +1,32 @@
 # Aquí es donde debe de ir su implementación del merge sort
-
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
-    pass
+	if len(lista) == 0 or len(lista) == 1:
+		return lista
+	else:
+		mitad = int(len(lista)/2)
+		mitadA = merge_sort(lista[:mitad])
+		mitadB = merge_sort(lista[mitad:])
+		return merge(mitadA,mitadB)
+#Esta función fuciona una lista ordenada
+def merge(mitadA,mitadB):
+    merged = []
+    while len(mitadA) != 0 and len(mitadB) != 0:
+        if mitadA[0] < mitadB[0]:
+            merged.append(mitadA[0])
+            mitadA.remove(mitadA[0])
+        else:
+            merged.append(mitadB[0])
+            mitadB.remove(mitadB[0])
+    if len(mitadA) == 0:
+        merged += mitadB
+    else:
+        merged += mitadA
+    return merged
 
+
+   
+    
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
