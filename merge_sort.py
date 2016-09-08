@@ -2,7 +2,27 @@
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
-    pass
+    if len(lista)==0:
+        return []
+    elif len(lista)==1:
+        return [lista[0]]
+    else:
+        return merge(merge_sort(lista[:len(lista)//2]), merge_sort(lista[len(lista)//2:]))
+
+def merge(comp_list1,comp_list2):
+    ordered_list=[]
+    while len(comp_list1)>0 and len(comp_list2)>0:
+        if comp_list1[0]>comp_list2[0]:
+            ordered_list.append(comp_list2[0])
+            comp_list2=comp_list2[1:]
+        else:
+            ordered_list.append(comp_list1[0])
+            comp_list1=comp_list1[1:]
+    if len(comp_list1)!=0:
+        ordered_list.extend(comp_list1)
+    if len(comp_list2)!=0:
+        ordered_list.extend(comp_list2)
+    return ordered_list
 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
