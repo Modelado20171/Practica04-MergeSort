@@ -5,6 +5,28 @@ def merge_sort(lista):
     pass
 
 
+def merge(listaIzquierda, listaDerecha):
+	i=0
+	j=0
+	lonIzq=len(listaIzquierda)
+	lonDer= len(listaDerecha)
+	resultado=[]
+
+	while i<lonIzq and j< lonDer:
+		if listaIzquierda[i]<listaDerecha[j]:
+			resultado.append(listaIzquierda[i])
+			i=i+1
+		else:
+			resultado.append(listaDerecha[j])
+			j=j+1
+	while i<lonIzq:
+		resultado.append(listaIzquierda[i])
+		i=i+1
+	while j<lonDer:
+		resultado.append(listaDerecha[j])
+		j=j+1
+	return resultado
+
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
 lista2 = [6,5,4,3,2,1]
