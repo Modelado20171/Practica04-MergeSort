@@ -2,7 +2,18 @@
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
-    pass
+    mitadI = list()
+    mitadD = list()
+    if len(lista) == 1 or len(lista) == 0:
+        return lista
+    else:
+        mitad = len(lista)//2
+        for x in range(0,mitad):
+            mitadI.append(lista[x])
+        for y in range(mitad,len(lista)):
+            mitadD.append(lista[y])
+
+        return merge(merge_sort(mitadI), merge_sort(mitadD))
 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
