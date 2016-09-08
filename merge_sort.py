@@ -5,12 +5,23 @@ def merge_sort(lista):
     n = len(lista)
     if(n <= 1):
         return lista
-    izq = merge_sort(lista[:int(n/2)])
-    der = merge_sort(lista[int(n/2):])
+    izq = merge_sort(lista[:(n//2)])
+    der = merge_sort(lista[(n//2):])
     return merge(izq, der)
 
+#Esta función recibe dos listas, las junta y regresa una nueva lista ordenada
 def merge(izq, der):
-    pass
+    ordenada = []
+    while len(izq) != 0 and len(der) != 0:
+        if izq[0] < der[0]:
+            ordenada.append(izq.pop(0))
+        else:
+            ordenada.append(der.pop(0))
+    if len(izq) == 0:
+        ordenada += der
+    else:
+        ordenada += izq
+    return ordenada
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
