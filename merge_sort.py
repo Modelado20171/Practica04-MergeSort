@@ -1,8 +1,15 @@
 # Aquí es donde debe de ir su implementación del merge sort
 
 # Esta función recibe una lista y regresa una copia ordenada
+import math
+
 def merge_sort(lista):
-    pass
+	if len(lista)==1:
+		return lista
+	mitadLista= math.floor(len(lista)/2)
+	listaIzquierda=lista[:mitadLista]
+	listaDerecha=lista[mitadLista:]
+	return merge(merge_sort(listaIzquierda), merge_sort(listaDerecha))
 
 
 def merge(listaIzquierda, listaDerecha):
