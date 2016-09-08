@@ -15,6 +15,27 @@ def merge_sort(lista):
 
         return merge(merge_sort(mitadI), merge_sort(mitadD))
 
+ def merge(listaI, listaD):
+    ordenado = list()
+    
+    while len(listaI) > 0 and len(listaD) > 0:
+        if listaI[0] <= listaD[0]:
+            ordenado.append(listaI[0])
+            del listaI[0]
+        else:
+            ordenado.append(listaD[0])
+            del listaD[0]
+            
+    while len(listaI) > 0 or len(listaD) > 0:   
+        if len(listaI) > 0:
+            ordenado.append(listaI[0])
+            del listaI[0]
+        if len(listaD) > 0:
+            ordenado.append(listaD[0])
+            del listaD[0]
+        
+    return ordenado
+
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
