@@ -20,28 +20,7 @@ def merge_Sort(l):
 
 	return mezclaMerge( merge_Sort(first_part),merge_Sort(scond_part))
 
-def mezclaMerge(l1,l2):
-	nueva = []
-	i = 0
-	j = 0
 
-	while i < len(l1) and j < len(l2):
-		if l1[i] < l2[j] :
-			nueva.append(l1[i])
-			i += 1
-		else:
-			nueva.append(l2[j])
-			j += 1
-
-	while j < len(l2) :
-		nueva.append(l2[j])
-		j += 1
-
-	while i < len(l1) :
-		nueva.append(l1[i])
-		i += 1
-
-	return nueva
 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
