@@ -1,7 +1,7 @@
 # Aquí es donde debe de ir su implementación del merge sort
 
 # Esta función recibe una lista y regresa una copia ordenada
-def merge_Sort(l):
+def merge_sort(l):
 	if len(l) == 0 or len(l) == 1 :
 		return l[:]
 	i = 0
@@ -18,7 +18,7 @@ def merge_Sort(l):
 		scond_part.append(l[mitad])
 		mitad += 1
 
-	return mezclaMerge( merge_Sort(first_part),merge_Sort(scond_part))
+	return mezclaMerge( merge_sort(first_part),merge_sort(scond_part))
 
 def mezclaMerge(l1,l2):
 	nueva = []
