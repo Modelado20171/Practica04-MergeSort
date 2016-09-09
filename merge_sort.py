@@ -2,7 +2,27 @@
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
-    pass
+    result = []
+    if len(lista) < 2:
+    	return lista
+    mitad = int(len(lista)/2)
+    l1 = merge_sort(lista[:mitad])
+    l2 = merge_sort(lista[mitad:])
+
+    i = 0
+    j = 0
+
+    while i < len(l1) and j < len(l2):
+    	if l1[i] > l2[j]:
+    		result.append(l2[j])
+    		j+=1
+    	else:
+    		result.append(l1[i])
+    		i+=1
+    #Manda todos los elementos restantes de la lista no vacía a result, no necesita verificar cual es la lista vacía.
+    result+=l1[i:]
+    result+=l2[j:]
+    return result
 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
