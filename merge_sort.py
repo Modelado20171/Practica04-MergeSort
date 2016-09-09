@@ -14,6 +14,9 @@ def merge_sort(lista):
 
     return mezcla(lista_izq, lista_der)
 
+#funcion auxiliar que fuciona dos listas
+def mezcla(lista_izq, lista_der):
+
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
