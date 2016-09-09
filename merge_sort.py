@@ -7,6 +7,13 @@ def merge_sort(lista):
     if longitud < 2:
         return lista
 
+    medio = math.floor(longitud/2)
+
+    lista_izq = merge_Sort(lista[:medio])
+    lista_der = merge_Sort(lista[medio:])
+
+    return mezcla(lista_izq, lista_der)
+
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
