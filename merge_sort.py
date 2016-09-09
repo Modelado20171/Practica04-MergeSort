@@ -1,4 +1,4 @@
-# Aquí es donde debe de ir su implementación del merge sort
+import math
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
@@ -9,8 +9,8 @@ def merge_sort(lista):
 
     medio = math.floor(longitud/2)
 
-    lista_izq = merge_Sort(lista[:medio])
-    lista_der = merge_Sort(lista[medio:])
+    lista_izq = merge_sort(lista[:medio])
+    lista_der = merge_sort(lista[medio:])
 
     return mezcla(lista_izq, lista_der)
 
@@ -27,6 +27,7 @@ def mezcla(lista_izq, lista_der):
             lista.append(lista_der[j])
             j += 1
 
+    #Se agregan los elementos faltante de las listas (si los hay)
     lista += lista_izq[i:]
     lista += lista_der[j:]
 
