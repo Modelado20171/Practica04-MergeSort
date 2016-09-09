@@ -2,7 +2,10 @@
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
-    pass
+    longitud = len(lista)
+
+    if longitud < 2:
+        return lista
 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
