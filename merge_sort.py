@@ -16,6 +16,21 @@ def merge_sort(lista):
 
 #funcion auxiliar que fuciona dos listas
 def mezcla(lista_izq, lista_der):
+    i, j = 0, 0
+    lista = []
+
+    while (i < len(lista_izq) and j < len(lista_der)):
+        if lista_izq[i] < lista_der[j]:
+            lista.append(lista_izq[i])
+            i += 1
+        else:
+            lista.append(lista_der[j])
+            j += 1
+
+    lista += lista_izq[i:]
+    lista += lista_der[j:]
+
+    return lista
 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
