@@ -2,8 +2,35 @@
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
-    pass
-
+	longitud = len(lista)
+	if longitud <= 1:
+		return lista
+	mitad = len(lista) // 2
+	izquierda = merge_sort(lista[:mitad])
+	derecha = merge_sort(lista[mitad:])
+	return merge(izquierda, derecha)
+    
+def merge(izquierda, derecha):
+    lista_ordenada = [] 
+    i = 0
+    j = 0
+    longitud_izquierda = len(izquierda) 
+    longitud_derecha = len(derecha) 
+  
+    while(i < longitud_izquierda or j < longitud_derecha): 
+        if(i >= longitud_izquierda): 
+            lista_ordenada.append(derecha[j]) 
+            j = j + 1
+        elif(j >= longitud_derecha): 
+            lista_ordenada.append(izquierda[i]) 
+            i = i + 1
+        elif(izquierda[i] < derecha[j]): 
+            lista_ordenada.append(izquierda[i]) 
+            i = i + 1
+        else: 
+            lista_ordenada.append(derecha[j]) 
+            j = j + 1
+    return lista_ordenada 
 
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
