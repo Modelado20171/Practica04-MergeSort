@@ -4,7 +4,24 @@
 def merge_sort(lista):
     pass
 
-
+def merge_sort_aux(lista_izquierda, lista_derecha):
+    lista_aux = list()
+    inicio = 0
+    fin = 0
+    while(inicio < len(lista_izquierda) and fin < len(lista_derecha)):
+        if(inicio >= len(lista_izquierda)):
+            lista_aux.append(lista_derecha[fin])
+            fin += 1 
+        elif(fin >= len(lista_derecha)): 
+            lista_aux.append(lista_izquierda[inicio]) 
+            inicio += 1
+        elif(lista_izquierda[inicio] <= lista_derecha[fin]): 
+            lista_aux.append(lista_izquierda[inicio]) 
+            inicio += 1 
+        else: 
+            lista_aux.append(lista_derecha[fin]) 
+            fin += 1 
+            
 # Tienes estríctamente prohibido borrar líneas después de este punto
 lista1 = [1,2,3,4,5,6]
 lista2 = [6,5,4,3,2,1]
