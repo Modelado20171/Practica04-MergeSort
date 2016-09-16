@@ -2,7 +2,14 @@
 
 # Esta función recibe una lista y regresa una copia ordenada
 def merge_sort(lista):
-    pass
+    if (len(lista) <= 1):
+        return lista
+    pivote = len(lista) // 2
+    izquierda = lista[:pivote]
+    derecha = lista[pivote:]
+    izquierda = merge_sort(izquierda)
+    derecha = merge_sort(derecha)
+    return merge_sort_aux(izquierda, derecha)
 
 def merge_sort_aux(lista_izquierda, lista_derecha):
     lista_aux = list()
